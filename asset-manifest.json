@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hire-developer-app/static/css/main.9e7e2032.css",
+    "main.js": "/hire-developer-app/static/js/main.74eb5aa4.js",
+    "static/js/787.a5fae5e1.chunk.js": "/hire-developer-app/static/js/787.a5fae5e1.chunk.js",
+    "index.html": "/hire-developer-app/index.html",
+    "main.9e7e2032.css.map": "/hire-developer-app/static/css/main.9e7e2032.css.map",
+    "main.74eb5aa4.js.map": "/hire-developer-app/static/js/main.74eb5aa4.js.map",
+    "787.a5fae5e1.chunk.js.map": "/hire-developer-app/static/js/787.a5fae5e1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e7e2032.css",
+    "static/js/main.74eb5aa4.js"
+  ]
+}
