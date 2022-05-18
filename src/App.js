@@ -64,7 +64,7 @@ function App() {
         <ToastContainer position="top-center" autoClose="1500" style={{ width: "400px"}} />
         <Routes>
           <Route 
-            path={'/'} 
+            path={'/hire-developer-app'} 
             element={<Home setDevelopers={setDevelopers} setProjects={setProjects} />}
              />
           <Route 

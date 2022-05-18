@@ -11,7 +11,7 @@ const Header = () => {
             </div>
             <div className="nav">
                 <ul>
-                    <NavLink to='/'>
+                    <NavLink to='/hire-developer-app'>
                         <li>Home</li>
                     </NavLink>
                     <NavLink to='/ListOfDevelopers'>
