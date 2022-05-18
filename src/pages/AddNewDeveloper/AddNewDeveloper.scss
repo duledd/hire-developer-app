@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.main {
+    font-size: 14px;
+    h2 {
+        padding: 10px 0;
+    }
+    p {
+        padding: 20px 0;
+        color: rgb(160, 112, 112);
+    }
+}
+
+%input {
+    height: 25px;
+    color: rgb(3, 17, 37);
+    background-color: whitesmoke;
+    outline-style: none;
+    border-radius: 3px;
+}
+
+%select {
+    height: 25px;
+    color: rgb(3, 17, 37);
+    background-color: whitesmoke;
+    outline-style: none;
+    border-radius: 3px;
+}
+%txtarea {
+    height: 50px;
+    color: rgb(3, 17, 37);
+    background-color: whitesmoke;
+    outline-style: none;
+    border-radius: 3px;
+}
+%btn {
+    height: 40px;
+    color: rgb(227, 232, 238);
+    background-color: rgb(20, 55, 121);
+    outline-style: none;
+    border-radius: 5px;
+    &[disabled] {
+        opacity: 0.2;
+    }
+}
+
+.form {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 5px;
+        & input {
+            @extend %input;
+        }
+        & select {
+            @extend %select;
+        }
+        & textarea {
+            @extend %txtarea;
+        }
+        & button {
+            @extend %btn;
+        }
+        & label {
+            opacity: 0.8;
+            font-size: 10;
+        }
+        & span {
+            color: red;
+            font-size: 12px;
+            padding: 5px;
+            opacity: 0.8;
+            display: none;
+        }
+        & input:invalid[focused=true] ~ span {
+            display: block;
+        }
+        & textarea:invalid[focused=true] ~ span {
+            display: block;
+        }
+    }
+}
+
+
+@media screen and(min-width:768px) {
+    .main {
+        font-size: 16px;
+        padding: 20px 40px;
+    }
+    .form__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-column-gap: 15px;
+        grid-row-gap: 0px;
+    }
+}
+
+
+@media screen and(min-width:900px) {
+    .main {
+        padding: 2rem 200px;
+        font-size: 16px;
+    }
+    .form {
+        &__item {
+            padding: 0 0;
+            & label {
+                font-size: 13px;
+            }
+        }
+        &__wrapper {
+            grid-column-gap: 30px;
+        }
+    }
+}
