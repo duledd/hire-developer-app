@@ -1,6 +1,7 @@
 .filter-input {
     text-align: center;
     padding-top: 10px;
+    font-size: 12px;
     h2 {
         padding-bottom: 1rem;
     }
@@ -19,12 +20,13 @@
     align-items: center;
     gap: 1rem;
     padding: 10px 10px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 @media screen and(min-width:768px) {
     .filter-input {
         padding-top: 30px;
+        font-size: 14px;
         input{
             height: 30px;
         }
@@ -43,6 +45,7 @@
 
 @media screen and(min-width:900px) {
     .filter-input {
+        font-size: 16px;
         input{
             height: 35px;
             font-size: 20px;

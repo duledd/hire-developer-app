@@ -38,9 +38,9 @@ export const Home = ({setDevelopers, setProjects}) => {
     return (
         <div className="main-home">
         <div className="container">
-            <h2>Welcome to hire developer app</h2>
-            <p>This is a simple Application for enrolling employees in the database(in this case Local Storage), changing their data and engaging in a specific project.</p>
-            <p>If you are in a hurry you can set the initial list of employees by clicking on the button below. Also when you are done using this App you can clear your local storage by clicking the button below.</p>
+            <h2>Welcome to Hire Developer App</h2>
+            <p>This is a simple Application for enrolling developers, changing their data and engaging in a specific project.</p>
+            <p>You can set the initial list of developers by clicking on the button below. Also when you are done using this App you can clear your local storage by clicking the button below.</p>
             <button className="set" onClick={setInitialLocalStorage}>Set developers</button>
             <button className="clear" onClick={clearLocalStorage}>Clear Local storage</button>
         </div>

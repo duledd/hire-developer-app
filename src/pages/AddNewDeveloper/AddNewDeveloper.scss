@@ -4,13 +4,14 @@
 }
 
 .main {
-    font-size: 14px;
+    font-size: 12px;
     h2 {
         padding: 10px 0;
+        text-align: center;
     }
     p {
-        padding: 20px 0;
-        color: rgb(160, 112, 112);
+        padding: 20px 5px;
+        color: rgb(3, 17, 37);
     }
 }
 
@@ -65,7 +66,6 @@
             @extend %btn;
         }
         & label {
-            opacity: 0.8;
             font-size: 10;
         }
         & span {
@@ -87,7 +87,7 @@
 
 @media screen and(min-width:768px) {
     .main {
-        font-size: 16px;
+        font-size: 14px;
         padding: 20px 40px;
     }
     .form__wrapper {

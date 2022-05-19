@@ -13,11 +13,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 5px;
+    padding: 15px 5px;
     font-size: 12px;
+    h2 {
+        text-align: center;
+    }
     .asigned {
         &__wrapper {
-            margin: 0.2rem 0;
+            margin: 1rem 0;
             padding: 5px;
             background-color: azure;
             border: 2px solid grey;
@@ -29,7 +32,9 @@
         }
         &__section {
             @extend %section;
-
+            small {
+                color: rgb(151, 75, 27)
+            }
         }
     }
 };

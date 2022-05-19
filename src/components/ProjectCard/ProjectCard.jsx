@@ -1,5 +1,5 @@
 import React from "react";
-import moment from 'moment/moment.js'
+import moment from 'moment/moment.js';
 
 
 export const ProjectCard = ({project}) => {
@@ -44,7 +44,7 @@ export const ProjectCard = ({project}) => {
         <div className="asigned__wrapper">
             <h3>Project name: {project.projectName}</h3>
             <div className="asigned__section">
-                <h4>Project time frame</h4>
+                <h5>Project time frame</h5>
                 <p>Project assigment date: {project.creationDate}</p>
                 <p>Project start date: {project.startDate}</p>
                 <p>Project end date: {project.endDate}</p>
@@ -60,6 +60,7 @@ export const ProjectCard = ({project}) => {
                 <h5>Project price</h5>
                 <p>Develeper price per our: {pricePerOur},00 USD</p>
                 <p>Total: {total},00 USD</p>
+                <small>*The basis for calculating the total project price is the number of working days and an individual bussiness day based on 8 working hours.</small>
             </div>
         </div>
     )

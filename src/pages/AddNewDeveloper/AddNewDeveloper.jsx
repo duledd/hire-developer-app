@@ -176,173 +176,174 @@ export const AddNewDeveloper = (props) => {
     return (
         <>
             <div className="main">
-            <h2>{isPathNameNotUpdate ? "Create Developer" : "Edit Developer"}</h2>
-            <p>* fields are required!</p>
-            <form className="form__wrapper" onSubmit={createDeveloper}>
-                <div className="form__item">
-                    <label>Name*:</label>
-                    <input 
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        aria-errormessage="Name should be 3-18 characters and should't include any special character!"
-                        value={developer.name || ""}
-                        onChange={handleDeveloperName}
-                        pattern="^[a-zA-Z0-9]{3,16}$"
-                        required={true}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                     />
-                    <span>Name should be 3-18 characters and should't include any special character!</span>
-                </div>
-                <div className="form__item">
-                    <label>Email:</label>
-                    <input 
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={developer.email || ""}
-                        onChange={handleDeveloperEmail}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                     />
-                    <span>Email format only!</span>
-                </div>
-                <div className="form__item">
-                    <label>Phone Number:</label>
-                    <input 
-                        type="text"
-                        name="number"
-                        placeholder="Number"
-                        value={developer.number || ""}
-                        onChange={handleDeveloperNumber}
-                        pattern="^[0-9\b]+$"
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                     />
-                     <span>Numbers only!</span>
-                </div>
-                <div className="form__item">
-                    <label>Location:</label>
-                    <input 
-                        type="text"
-                        name="location"
-                        placeholder="Location"
-                        value={developer.location || ""}
-                        onChange={handleDeveloperLocation}
-                        maxLength={50}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
+                <h2>{isPathNameNotUpdate ? "Create Developer" : "Edit Developer"}</h2>
+                <p>* fields are required!</p>
+                <form className="form__wrapper" onSubmit={createDeveloper}>
+                    <div className="form__item">
+                        <label>Name*:</label>
+                        <input 
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            aria-errormessage="Name should be 3-18 characters and should't include any special character!"
+                            value={developer.name || ""}
+                            onChange={handleDeveloperName}
+                            pattern="^[a-zA-Z0-9_ ]{3,23}$"
+                            required={true}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
                         />
-                </div>
-                <div className="form__item">
-                    <label>Image URL:</label>
-                    <input 
-                        type="text"
-                        name="image"
-                        placeholder="Image"
-                        value={developer.image || ""}
-                        onChange={handleDeveloperImage}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                         />
-                </div>
-                <div className="form__item">
-                    <label>Price Per Hour*:</label>
-                    <input 
-                        type="text"
-                        name="price"
-                        placeholder="Price Per Hour"
-                        value={developer.price || ""}
-                        onChange={handleDeveloperPrice}
-                        pattern="^[0-9]{1,5}$"
-                        required={true}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                         />
-                    <span>Price should be 1-5 digits only!</span>
-                </div>
-                <div className="form__item">
-                    <label>Chooze one Technology:</label>
-                    <select
-                        name="technology"
-                        placeholder="Technology"
-                        value={developer.technology || ""}
-                        onChange={handleDeveloperTechnology}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                    >
-                        <option>--Chooze one--</option>
-                        <option value="Javascript">Javascript</option>
-                        <option value="Java">Java</option>
-                        <option value=".NET">.NET</option>
-                        <option value="Flutter">Flutter</option>
-                        <option value="Pyton">Pyton</option>
-                        <option value="PHP">PHP</option>
-                    </select>
-                </div>
-                <div className="form__item">
-                    <label>Description:</label>
-                    <textarea
-                        name="description"
-                        placeholder="Description"
-                        value={developer.description || ""}
-                        onChange={handleDeveloperDescription}
-                        maxLength={100}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
+                        <span>Name should be 3-23 characters and should't include any special character!</span>
+                    </div>
+                    <div className="form__item">
+                        <label>Email:</label>
+                        <input 
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={developer.email || ""}
+                            onChange={handleDeveloperEmail}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
                         />
-                </div>
-                <div className="form__item">
-                    <label>Years of experience:</label>
-                    <select
-                        name="experience"
-                        placeholder="Experience"
-                        value={developer.experience || ""}
-                        onChange={handleDeveloperExperience}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                    >
-                        <option>--Chooze one--</option>
-                        <option value="Beginner">Beginner 0-2</option>
-                        <option value="Intermediate">Intermediate 3-5</option>
-                        <option value="Senior">Senior 6-10</option>
-                        <option value="Expert">Expert 11+</option>
-                    </select>
-                </div>
-                <div className="form__item">
-                    <label>Native Language:</label>
-                    <select
-                        name="language"
-                        placeholder="Language"
-                        value={developer.language || ""}
-                        onChange={handleDeveloperLanguage}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                    >
-                        <option>--Chooze one--</option>
-                        <option value="English">English</option>
-                        <option value="Serbian">Serbian</option>
-                        <option value="Italian">Italian</option>
-                    </select>
-                </div>
-                <div className="form__item">
-                    <label>Linkedin profile link:</label>
-                    <input type="text"
-                        name="linkedin"
-                        placeholder="Linkedin"
-                        value={developer.linkedin || ""}
-                        onChange={handleDeveloperLinkedin}
-                        onBlur={handleFocus}
-                        focused={focused.toString()}
-                     />
-                </div>
-                <div className="form__item">
-                    <button>
-                        {isPathNameNotUpdate ? "Add New Developer" : "Save Changes"}
-                    </button>
-                </div>
-            </form>
+                        <span>Email format only!</span>
+                    </div>
+                    <div className="form__item">
+                        <label>Phone Number:</label>
+                        <input 
+                            type="text"
+                            name="number"
+                            placeholder="Number"
+                            value={developer.number || ""}
+                            onChange={handleDeveloperNumber}
+                            pattern="^[0-9\b ]+$"
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                        />
+                        <span>Numbers only!</span>
+                    </div>
+                    <div className="form__item">
+                        <label>Location:</label>
+                        <input 
+                            type="text"
+                            name="location"
+                            placeholder="Location"
+                            value={developer.location || ""}
+                            onChange={handleDeveloperLocation}
+                            maxLength={50}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                            />
+                    </div>
+                    <div className="form__item">
+                        <label>Image URL:</label>
+                        <input 
+                            type="text"
+                            name="image"
+                            placeholder="Image"
+                            value={developer.image || ""}
+                            onChange={handleDeveloperImage}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                            />
+                    </div>
+                    <div className="form__item">
+                        <label>Price Per Hour*:</label>
+                        <input 
+                            type="text"
+                            name="price"
+                            placeholder="Price Per Hour"
+                            value={developer.price || ""}
+                            onChange={handleDeveloperPrice}
+                            pattern="^[0-9]{1,5}$"
+                            required={true}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                            />
+                        <span>Price should be 1-5 digits only and no empty space is allowed!</span>
+                    </div>
+                    <div className="form__item">
+                        <label>Chooze one Technology:</label>
+                        <select
+                            name="technology"
+                            placeholder="Technology"
+                            value={developer.technology || ""}
+                            onChange={handleDeveloperTechnology}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                        >
+                            <option>--Chooze one--</option>
+                            <option value="Javascript">Javascript</option>
+                            <option value="Java">Java</option>
+                            <option value=".NET">.NET</option>
+                            <option value="Flutter">Flutter</option>
+                            <option value="Pyton">Pyton</option>
+                            <option value="PHP">PHP</option>
+                        </select>
+                    </div>
+                    <div className="form__item">
+                        <label>Description:</label>
+                        <textarea
+                            name="description"
+                            placeholder="Description"
+                            value={developer.description || ""}
+                            onChange={handleDeveloperDescription}
+                            maxLength={100}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                            />
+                    </div>
+                    <div className="form__item">
+                        <label>Years of experience:</label>
+                        <select
+                            name="experience"
+                            placeholder="Experience"
+                            value={developer.experience || ""}
+                            onChange={handleDeveloperExperience}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                        >
+                            <option>--Chooze one--</option>
+                            <option value="Beginner">Beginner 0-2</option>
+                            <option value="Intermediate">Intermediate 3-5</option>
+                            <option value="Senior">Senior 6-10</option>
+                            <option value="Expert">Expert 11+</option>
+                        </select>
+                    </div>
+                    <div className="form__item">
+                        <label>Native Language:</label>
+                        <select
+                            name="language"
+                            placeholder="Language"
+                            value={developer.language || ""}
+                            onChange={handleDeveloperLanguage}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                        >
+                            <option>--Chooze one--</option>
+                            <option value="English">English</option>
+                            <option value="Serbian">Serbian</option>
+                            <option value="Italian">Italian</option>
+                        </select>
+                    </div>
+                    <div className="form__item">
+                        <label>Linkedin profile link:</label>
+                        <input type="text"
+                            name="linkedin"
+                            placeholder="Linkedin"
+                            value={developer.linkedin || ""}
+                            onChange={handleDeveloperLinkedin}
+                            maxLength={100}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
+                        />
+                    </div>
+                    <div className="form__item">
+                        <button>
+                            {isPathNameNotUpdate ? "Add New Developer" : "Save Changes"}
+                        </button>
+                    </div>
+                </form>
             </div>
         </>
     )

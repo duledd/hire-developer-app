@@ -7,7 +7,7 @@ export const AssignedProjects  = (props) => {
     return (
         <>
             <div className="assigned__main">
-                <h2>Assigned projects:</h2>
+                <h2>Assigned projects</h2>
                 {!!projects.length ? (
                     projects.map((project) => 
                     <ProjectCard 

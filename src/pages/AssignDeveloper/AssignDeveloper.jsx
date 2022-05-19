@@ -4,6 +4,7 @@ import {DeveloperCard} from "../../components/Developer-card/DeveloperCard";
 import { v4 as uuid } from "uuid";
 import "./AssignDeveloper.scss"
 import { toast } from 'react-toastify';
+import moment from 'moment/moment.js';
 
 export const AssignDeveloper = (props) => {
     const params = useParams();
@@ -48,7 +49,7 @@ export const AssignDeveloper = (props) => {
             startDate: value,
         });
     };
-
+    
     const handleProjectEndDate = (e) => {
         const value = e.target.value;
         addProject({
@@ -66,6 +67,22 @@ export const AssignDeveloper = (props) => {
         result.push(projectToBeCreated);
         localStorage.setItem('projects', JSON.stringify(result));
         toast.success("Project Created Successufully!");
+    };
+
+    const disablePastDate = () => {
+        const today = new Date();
+        const dd = String(today.getDate() + 1).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
+    };
+
+    const disableDateBeforeStartDate = () => {
+        const today = new Date(project.startDate);
+        const dd = String(today.getDate() + 1).padStart(2, "0");
+        const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        const yyyy = today.getFullYear();
+        return yyyy + "-" + mm + "-" + dd;
     };
 
     return (
@@ -88,7 +105,7 @@ export const AssignDeveloper = (props) => {
                             placeholder="Project name"
                             value={project.projectName || ""}
                             onChange={handleProjectName}
-                            pattern="^[a-zA-Z0-9]{3,16}$"
+                            pattern="^[a-zA-Z0-9_ ]{3,16}$"
                             required
                          />
                     </div>
@@ -97,6 +114,7 @@ export const AssignDeveloper = (props) => {
                         <input 
                             type="date" 
                             name="StartDate"
+                            min={disablePastDate()}
                             value={project.startDate || ""}
                             onChange={handleProjectStartDate}
                             required
@@ -107,6 +125,7 @@ export const AssignDeveloper = (props) => {
                         <input 
                             type="date" 
                             name="EndDate"
+                            min={disableDateBeforeStartDate()}
                             value={project.endDate || ""}
                             onChange={handleProjectEndDate}
                             required

@@ -24,7 +24,6 @@ export const MoreInfo = (props) => {
     return (
         <>
         <div className="more-info__wrapper">
-            <h2>More Info:</h2>
             <div className="developer__section1">
                 <div className="image">
                     <img src={developer.image} alt={developer.name} />
