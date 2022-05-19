@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hire-developer-app/static/css/main.9e7e2032.css",
-    "main.js": "/hire-developer-app/static/js/main.b452f7c8.js",
+    "main.css": "/hire-developer-app/static/css/main.d86fd381.css",
+    "main.js": "/hire-developer-app/static/js/main.8f28eb16.js",
     "static/js/787.a5fae5e1.chunk.js": "/hire-developer-app/static/js/787.a5fae5e1.chunk.js",
     "index.html": "/hire-developer-app/index.html",
-    "main.9e7e2032.css.map": "/hire-developer-app/static/css/main.9e7e2032.css.map",
-    "main.b452f7c8.js.map": "/hire-developer-app/static/js/main.b452f7c8.js.map",
+    "main.d86fd381.css.map": "/hire-developer-app/static/css/main.d86fd381.css.map",
+    "main.8f28eb16.js.map": "/hire-developer-app/static/js/main.8f28eb16.js.map",
     "787.a5fae5e1.chunk.js.map": "/hire-developer-app/static/js/787.a5fae5e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e7e2032.css",
-    "static/js/main.b452f7c8.js"
+    "static/css/main.d86fd381.css",
+    "static/js/main.8f28eb16.js"
   ]
 }
