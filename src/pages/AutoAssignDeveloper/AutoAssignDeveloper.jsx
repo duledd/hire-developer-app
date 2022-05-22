@@ -5,12 +5,21 @@ import { toast } from 'react-toastify';
 
 
 export const AutoAssignDeveloper = ({developers, setProjects, projects}) => {
-
+    const [availableTechnology, setAvailableTechnology] = useState([]);
     const [radio, setRadio] = useState("min");
     const [technology, setTechnology] = useState("Javascript");
     const [autoAssignedDeveloper, setAutoAssignedDeveloper] = useState({});
     const [focused, setFocused] = useState(false);
     
+    //const getTech = developers.filter(developer => developer.technology);
+    const getTechnology = developers.map((developer) => developer.technology);
+    const uniqueTechnology = getTechnology.filter((x, i, a) => a.indexOf(x) === i)
+    console.log(uniqueTechnology);
+
+    useEffect(() => {
+        setAvailableTechnology(uniqueTechnology);
+    }, []);
+    console.log(availableTechnology);
 
     const filteredTechnoDevelopers = developers.filter((developer) => developer.technology == technology);
     const maxPrice = Math.max(...filteredTechnoDevelopers.map(developer => developer.price));
@@ -174,15 +183,16 @@ export const AutoAssignDeveloper = ({developers, setProjects, projects}) => {
                             placeholder="Technology"
                             onChange={handleDeveloperTechnology}
                         >
-                            <option value="Javascript">Javascript</option>
-                            <option value="Java">Java</option>
-                            <option value=".NET">.NET</option>
-                            <option value="Flutter">Flutter</option>
-                            <option value="Pyton">Pyton</option>
-                            <option value="PHP">PHP</option>
+                            {!!availableTechnology.length ? (
+                                availableTechnology.map((x,y) => 
+                                    <option key={y}>{x}</option> ) 
+                                    ): (
+                                    <option>No option</option>
+                            )}
                         </select>
                         <div className="filtered-developers">
                                 <table>
+                                    <caption>Avelable Developers</caption>
                                     <thead>
                                         <tr>
                                             <th>Developer Name</th>

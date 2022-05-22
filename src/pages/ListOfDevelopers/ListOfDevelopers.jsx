@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {NavLink} from 'react-router-dom';
 import "./ListOfDevelopers.scss";
 import { DeveloperCard } from "../../components/Developer-card/DeveloperCard";
@@ -6,7 +6,14 @@ import { DeveloperCard } from "../../components/Developer-card/DeveloperCard";
 export const ListOfDevelopers = (props) => {
     
     const {developers, handleFilterName, handleDeleteDeveloper} = props;
+    const [disable, setDisable] = React.useState(false);
     
+    useEffect(() => {
+        if (developers.length < 1 || developers == undefined) {
+            setDisable(true)
+        }
+        
+    })
     return (
         <>
             <div className="filter-input">
@@ -16,7 +23,7 @@ export const ListOfDevelopers = (props) => {
                     <button className="add-btn">Add New Developer</button>
                 </NavLink>
                 <NavLink to='/AutoAssignDeveloper'>
-                    <button className="btn-hire">Auto-Hire Developer</button>
+                    <button className="btn-hire" disabled={disable}>Auto-Hire Developer</button>
                 </NavLink>
             </div>
             <div className="developers-main">
