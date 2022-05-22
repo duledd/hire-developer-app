@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink} from 'react-router-dom';
 import "./ListOfDevelopers.scss";
 import { DeveloperCard } from "../../components/Developer-card/DeveloperCard";
 
@@ -11,6 +12,12 @@ export const ListOfDevelopers = (props) => {
             <div className="filter-input">
                 <h2>List of developers</h2>
                 <input placeholder="Search Developer" onChange={handleFilterName} />
+                <NavLink to='/AddNewDeveloper'>
+                    <button className="add-btn">Add New Developer</button>
+                </NavLink>
+                <NavLink to='/AutoAssignDeveloper'>
+                    <button className="btn-hire">Auto-Hire Developer</button>
+                </NavLink>
             </div>
             <div className="developers-main">
                 {!!developers.length ? (

@@ -151,6 +151,7 @@ export const AddNewDeveloper = (props) => {
                 setDevelopers(result);
                 localStorage.setItem('developers', JSON.stringify(result));
                 toast.success("Developer Updated Successufully!")
+                setFocused(false);
             }
         }
         resetValues();
@@ -176,7 +177,7 @@ export const AddNewDeveloper = (props) => {
     return (
         <>
             <div className="main">
-                <h2>{isPathNameNotUpdate ? "Create Developer" : "Edit Developer"}</h2>
+                <h2>{isPathNameNotUpdate ? "Add New Developer" : "Edit Developer"}</h2>
                 <p>* fields are required!</p>
                 <form className="form__wrapper" onSubmit={createDeveloper}>
                     <div className="form__item">

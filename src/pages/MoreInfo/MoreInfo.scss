@@ -1,19 +1,27 @@
 %btn-edit {
-    width: 70px;
+    width: 100px;
+    height: 40px;
     outline-style: none;
     background-color: steelblue;
     color: white;
     border-radius: 5px;
     padding: 5px;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 %btn-delete {
-    width: 70px;
+    width: 100px;
+    height: 40px;
     outline-style: none;
     background-color: rgb(226, 229, 40);
     color: rgb(51, 44, 6);
     border-radius: 5px;
     padding: 5px;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .more-info__wrapper {

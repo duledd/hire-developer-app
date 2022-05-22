@@ -1,0 +1,39 @@
+.table {
+    font-size: 12px;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+    caption {
+        text-align: left;
+    }
+    td, th {
+        border: 1px solid;
+        text-align: left;
+        padding: 5px;
+        background-color: rgb(182, 199, 247);
+      }
+    th {
+        width: 120px;
+    }
+}
+h5 {
+    text-align: center;
+}
+small {
+    color: rgb(151, 75, 27)
+}
+  
+@media screen and(min-width:768px) {
+    table {
+        font-size: 14px;
+    }
+}
+
+@media screen and(min-width:768px) {
+    table {
+        font-size: 16px;
+        th {
+            width: 200px;
+        }
+    }
+}

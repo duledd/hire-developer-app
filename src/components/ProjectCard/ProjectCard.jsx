@@ -1,6 +1,6 @@
 import React from "react";
 import moment from 'moment/moment.js';
-
+import "./ProjectCard.scss"
 
 export const ProjectCard = ({project}) => {
     
@@ -43,25 +43,55 @@ export const ProjectCard = ({project}) => {
     return (
         <div className="asigned__wrapper">
             <h3>Project name: {project.projectName}</h3>
-            <div className="asigned__section">
-                <h5>Project time frame</h5>
-                <p>Project assigment date: {project.creationDate}</p>
-                <p>Project start date: {project.startDate}</p>
-                <p>Project end date: {project.endDate}</p>
-                <p>Project duration: {duration} days</p>
-                <p>Project bussiness day duration: {businessDaysDuration} days</p>
-            </div>
-            <div className="asigned__section">
-                <h5>Hired on this project</h5>
-                <p>Developer Id: {project.developerId}</p>
-                <p>Project developer name: {project.developerName}</p>
-            </div>
-            <div className="asigned__section">
-                <h5>Project price</h5>
-                <p>Develeper price per our: {pricePerOur},00 USD</p>
-                <p>Total: {total},00 USD</p>
-                <small>*The basis for calculating the total project price is the number of working days and an individual bussiness day based on 8 working hours.</small>
-            </div>
+            <h5>Project Id: {project.id}</h5>
+            <table className="table">
+            <caption><strong>Project time frame</strong></caption>
+                <tbody>
+                    <tr>
+                        <th>Assigment Date</th>
+                        <td>{project.creationDate}</td>
+                    </tr>
+                    <tr>
+                        <th>Start Date</th>
+                        <td>{project.startDate}</td>
+                    </tr>
+                    <tr>
+                        <th>End Date</th>
+                        <td>{project.endDate}</td>
+                    </tr>
+                    <tr>
+                        <th>Bussiness Days</th>
+                        <td>{duration}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table className="table">
+                <caption><strong>Hired on this project</strong></caption>
+                <tbody>
+                    <tr>
+                        <th>Developer Id</th>
+                        <td>{project.developerId}</td>
+                    </tr>
+                    <tr>
+                        <th>Project Developer Name</th>
+                        <td>{project.developerName}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table className="table">
+                <caption><strong>Project price</strong></caption>
+                <tbody>
+                    <tr>
+                        <th>Develeper Price Per Our</th>
+                        <td>{pricePerOur}</td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td>{total},00 USD</td>
+                    </tr>
+                </tbody>
+            </table>
+            <small>*The basis for calculating the total project price is the number of bussiness days and an individual bussiness day based on 8 working hours.</small>
         </div>
     )
 };

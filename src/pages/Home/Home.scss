@@ -20,14 +20,15 @@
 .set {
     width: 100%;
     outline-style: none;
-    background-color: rgb(88, 18, 174);
-    color: bisque;
+    background-color: rgb(36, 54, 149);
+    color: azure;
     padding: 1rem;
 }
 .clear {
     width: 100%;
     outline-style: none;
-    background-color: chocolate;
+    background-color: rgb(51,102,0);
+    color: azure;
     padding: 1rem;
 }
 
@@ -42,6 +43,7 @@
 
 @media screen and(min-width:900px) {
     .container {
+        width: 600px;
         font-size: 16px;
     }
 }

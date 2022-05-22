@@ -30,18 +30,19 @@ export const MoreInfo = (props) => {
                 </div>
                 <div className="basic-data">
                     <p><strong>Name: {developer.name}</strong></p>
-                    <p>Location: {developer.location}</p>
-                    <p>Technology: {developer.technology}</p>
+                    <p><strong>Id: </strong>{developer.id}</p>
+                    <p><strong>Location: </strong>{developer.location}</p>
+                    <p><strong>Technology: </strong>{developer.technology}</p>
                 </div>
             </div>
             <div className="developer__section2">
-                <p>Description: {developer.description}</p>
-                <p>Expirience: {developer.experience}</p>
-                <p>Email: {developer.email}</p>
-                <p>Phone number: {developer.number}</p>
-                <p>Native language: {developer.language}</p>
-                <p>Price per hour: {developer.price},<small>00</small> USD</p>
-                <p>LinkedIn Profile: {developer.linkedin}</p>
+                <p><strong>Description: </strong>{developer.description}</p>
+                <p><strong>Expirience: </strong>{developer.experience}</p>
+                <p><strong>Email: </strong>{developer.email}</p>
+                <p><strong>Phone number: </strong>{developer.number}</p>
+                <p><strong>Native language: </strong>{developer.language}</p>
+                <p><strong>Price per hour: </strong>{developer.price},00 USD</p>
+                <p><strong>LinkedIn Profile: </strong>{developer.linkedin}</p>
             </div>
             <div className="developer__section3">
                 <NavLink to={`/UpdateDeveloper/${developer.id}`}>

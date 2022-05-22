@@ -11,6 +11,7 @@ export const AssignDeveloper = (props) => {
     const {id} = params;
     const {setProjects, developers, projects} = props;
     const [projectDeveloper, setDeveloperForProject] = useState([]);
+    const [focused, setFocused] = useState(false);
     
     const getSingleDeveloper = () => {
         const [result] = developers.filter(projectDeveloper =>
@@ -85,6 +86,10 @@ export const AssignDeveloper = (props) => {
         return yyyy + "-" + mm + "-" + dd;
     };
 
+    const handleFocus = () => {
+        setFocused(true);
+    };
+
     return (
         <>
             <div className="assign__main">
@@ -106,8 +111,11 @@ export const AssignDeveloper = (props) => {
                             value={project.projectName || ""}
                             onChange={handleProjectName}
                             pattern="^[a-zA-Z0-9_ ]{3,16}$"
-                            required
+                            required={true}
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
                          />
+                        <span>Name should be 3-16 characters and should't include any special character!</span>
                     </div>
                     <div className="project__input">
                         <label>Start date:</label>
@@ -118,6 +126,8 @@ export const AssignDeveloper = (props) => {
                             value={project.startDate || ""}
                             onChange={handleProjectStartDate}
                             required
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
                         />
                     </div>
                     <div className="project__input">
@@ -129,10 +139,12 @@ export const AssignDeveloper = (props) => {
                             value={project.endDate || ""}
                             onChange={handleProjectEndDate}
                             required
+                            onBlur={handleFocus}
+                            focused={focused.toString()}
                         />
                     </div>
                     <div className="project__input">
-                        <button>Create project</button>
+                        <button>Assigne project</button>
                     </div>
                 </form>
             </div>

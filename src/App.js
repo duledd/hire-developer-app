@@ -7,6 +7,7 @@ import { AddNewDeveloper } from "./pages/AddNewDeveloper/AddNewDeveloper";
 import { AssignedProjects } from "./pages/AssignedProjects/AssignedProjects"
 import { MoreInfo } from "./pages/MoreInfo/MoreInfo";
 import {AssignDeveloper} from "././pages/AssignDeveloper/AssignDeveloper"
+import { AutoAssignDeveloper } from "./pages/AutoAssignDeveloper/AutoAssignDeveloper";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
@@ -86,6 +87,10 @@ function App() {
           <Route 
             path={'/AssignDeveloper/:id'} 
             element={<AssignDeveloper developers={developers} projects={projects} setProjects={setProjects} />}
+             />
+          <Route 
+            path={'/AutoAssignDeveloper'} 
+            element={<AutoAssignDeveloper developers={developers} projects={projects} setProjects={setProjects} />}
              />
           <Route 
             path={'/AssignedProjects'} 
