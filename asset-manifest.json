@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hire-developer-app/static/css/main.d86fd381.css",
-    "main.js": "/hire-developer-app/static/js/main.8f28eb16.js",
+    "main.css": "/hire-developer-app/static/css/main.8434518c.css",
+    "main.js": "/hire-developer-app/static/js/main.28f437b8.js",
     "static/js/787.a5fae5e1.chunk.js": "/hire-developer-app/static/js/787.a5fae5e1.chunk.js",
     "index.html": "/hire-developer-app/index.html",
-    "main.d86fd381.css.map": "/hire-developer-app/static/css/main.d86fd381.css.map",
-    "main.8f28eb16.js.map": "/hire-developer-app/static/js/main.8f28eb16.js.map",
+    "main.8434518c.css.map": "/hire-developer-app/static/css/main.8434518c.css.map",
+    "main.28f437b8.js.map": "/hire-developer-app/static/js/main.28f437b8.js.map",
     "787.a5fae5e1.chunk.js.map": "/hire-developer-app/static/js/787.a5fae5e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d86fd381.css",
-    "static/js/main.8f28eb16.js"
+    "static/css/main.8434518c.css",
+    "static/js/main.28f437b8.js"
   ]
 }
