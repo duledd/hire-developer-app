@@ -11,15 +11,13 @@ export const AutoAssignDeveloper = ({developers, setProjects, projects}) => {
     const [autoAssignedDeveloper, setAutoAssignedDeveloper] = useState({});
     const [focused, setFocused] = useState(false);
     
-    //const getTech = developers.filter(developer => developer.technology);
+    
     const getTechnology = developers.map((developer) => developer.technology);
-    const uniqueTechnology = getTechnology.filter((x, i, a) => a.indexOf(x) === i)
-    console.log(uniqueTechnology);
+    const uniqueTechnology = getTechnology.filter((x, i, a) => a.indexOf(x) === i);
 
     useEffect(() => {
         setAvailableTechnology(uniqueTechnology);
     }, []);
-    console.log(availableTechnology);
 
     const filteredTechnoDevelopers = developers.filter((developer) => developer.technology == technology);
     const maxPrice = Math.max(...filteredTechnoDevelopers.map(developer => developer.price));
@@ -50,7 +48,6 @@ export const AutoAssignDeveloper = ({developers, setProjects, projects}) => {
     const developerName = autoAssignedDeveloper.name;
     const developerPricePerOur = autoAssignedDeveloper.price;
     const id = autoAssignedDeveloper.id;
-    console.log(id)
 
     const [project, addProject] = useState({
         projectName: "",

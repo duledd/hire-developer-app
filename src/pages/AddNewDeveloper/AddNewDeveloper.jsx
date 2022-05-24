@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 export const AddNewDeveloper = (props) => {
     const {setDevelopers, developers} = props;
     const [focused, setFocused] = useState(false);
+    const [disable, setDisable] = React.useState(false);
     const [developer, addDeveloper] = useState({
         name: "",
         email: "",
@@ -28,12 +29,18 @@ export const AddNewDeveloper = (props) => {
     const location = useLocation();
     const isPathNameNotUpdate = location.pathname == "/AddNewDeveloper";
     
-    useEffect( () => {
+    useEffect(() => {
         if (!isPathNameNotUpdate) {
             const [developerToEdit] = developers.filter((developerToEdit) => developerToEdit.id === id);
             addDeveloper(developerToEdit);
         }
     }, []);
+
+    const disableEditAfterSubmit = () => {
+        if (!isPathNameNotUpdate) {
+            setDisable(true);
+        };
+    };
 
     const handleDeveloperName = (e) => {
         const value = e.target.value;
@@ -159,15 +166,16 @@ export const AddNewDeveloper = (props) => {
     
     const resetValues = () => {
         addDeveloper({
-        name: "", 
-        email: "", 
-        number: "", 
-        image: "",
-        location: "",
-        price: "",
-        description: "",
-        linkedin: ""
-    });
+            name: "",
+            email: "",
+            number: "",
+            image: "",
+            location: "",
+            price: "",
+            description: "",
+            linkedin: ""
+        });
+        setFocused(false);
     };
 
     const handleFocus = () => {
@@ -340,7 +348,7 @@ export const AddNewDeveloper = (props) => {
                         />
                     </div>
                     <div className="form__item">
-                        <button>
+                        <button disabled={disable} onClick={disableEditAfterSubmit}>
                             {isPathNameNotUpdate ? "Add New Developer" : "Save Changes"}
                         </button>
                     </div>

@@ -15,10 +15,7 @@ const Header = () => {
                         <li>Home</li>
                     </NavLink>
                     <NavLink to='/ListOfDevelopers'>
-                        <li>List Of Developers</li>
-                    </NavLink>
-                    <NavLink to='/AddNewDeveloper'>
-                        <li>Add New Developer</li>
+                        <li>Developers</li>
                     </NavLink>
                     <NavLink to='/AssignedProjects'>
                         <li>Assigned Projects</li>
