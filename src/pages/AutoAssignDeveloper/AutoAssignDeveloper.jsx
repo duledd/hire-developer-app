@@ -14,9 +14,10 @@ export const AutoAssignDeveloper = ({developers, setProjects, projects}) => {
     
     const getTechnology = developers.map((developer) => developer.technology);
     const uniqueTechnology = getTechnology.filter((x, i, a) => a.indexOf(x) === i);
+    const noFalsyUniqueTechnology = uniqueTechnology.filter(el => el);
 
     useEffect(() => {
-        setAvailableTechnology(uniqueTechnology);
+        setAvailableTechnology(noFalsyUniqueTechnology);
     }, []);
 
     const filteredTechnoDevelopers = developers.filter((developer) => developer.technology == technology);

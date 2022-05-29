@@ -60,8 +60,12 @@ export const ProjectCard = ({project}) => {
                         <td>{project.endDate}</td>
                     </tr>
                     <tr>
-                        <th>Bussiness Days</th>
+                        <th>Duration</th>
                         <td>{duration}</td>
+                    </tr>
+                    <tr>
+                        <th>Bussiness Days</th>
+                        <td>{businessDaysDuration}</td>
                     </tr>
                 </tbody>
             </table>
