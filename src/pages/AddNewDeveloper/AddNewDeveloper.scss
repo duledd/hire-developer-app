@@ -20,6 +20,7 @@
     color: rgb(3, 17, 37);
     background-color: whitesmoke;
     outline-style: none;
+    border: none;
     border-radius: 3px;
 }
 
@@ -28,6 +29,7 @@
     color: rgb(3, 17, 37);
     background-color: whitesmoke;
     outline-style: none;
+    border: none;
     border-radius: 3px;
 }
 %txtarea {
@@ -35,6 +37,7 @@
     color: rgb(3, 17, 37);
     background-color: whitesmoke;
     outline-style: none;
+    border: none;
     border-radius: 3px;
 }
 %btn {
@@ -42,6 +45,7 @@
     color: rgb(227, 232, 238);
     background-color: rgb(20, 55, 121);
     outline-style: none;
+    border: none;
     border-radius: 5px;
     &[disabled] {
         opacity: 0.2;
