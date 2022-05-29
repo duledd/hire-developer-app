@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 export const AddNewDeveloper = (props) => {
     const {setDevelopers, developers} = props;
     const [focused, setFocused] = useState(false);
-    const [disable, setDisable] = React.useState(false);
+    const [disable, setDisable] = useState(false);
     const [developer, addDeveloper] = useState({
         name: "",
         email: "",
@@ -35,12 +35,6 @@ export const AddNewDeveloper = (props) => {
             addDeveloper(developerToEdit);
         }
     }, []);
-
-    const disableEditAfterSubmit = () => {
-        if (!isPathNameNotUpdate) {
-            setDisable(true);
-        };
-    };
 
     const handleDeveloperName = (e) => {
         const value = e.target.value;
@@ -158,6 +152,7 @@ export const AddNewDeveloper = (props) => {
                 setDevelopers(result);
                 localStorage.setItem('developers', JSON.stringify(result));
                 toast.success("Developer Updated Successufully!")
+                setDisable(true);
                 setFocused(false);
             }
         }
@@ -348,7 +343,7 @@ export const AddNewDeveloper = (props) => {
                         />
                     </div>
                     <div className="form__item">
-                        <button disabled={disable} onClick={disableEditAfterSubmit}>
+                        <button disabled={disable}>
                             {isPathNameNotUpdate ? "Add New Developer" : "Save Changes"}
                         </button>
                     </div>

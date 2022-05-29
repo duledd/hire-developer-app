@@ -77,6 +77,8 @@
             }
             & select {
                 width: 250px;
+                outline-style: none;
+                border: none;
             }
             .filtered-developers {
                 table {
@@ -109,6 +111,9 @@
                     input {
                         width: 40px;
                         outline-style: none;
+                    }
+                    input[type='radio'] {
+                        accent-color: #232323;
                     }
                     p {
                         width: 100%;
